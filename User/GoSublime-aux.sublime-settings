@@ -1,0 +1,17 @@
+{
+	"9o.hist.Q:\\Go\\workspace\\src\\libtest":
+	[
+		"go install",
+		"go build"
+	],
+	"9o.hist.Q:\\Go\\workspace\\src\\test":
+	[
+		"help",
+		"install",
+		"go install",
+		"test"
+	],
+	"ann": "a14.02.25-1",
+	"install_version": "r13.12.26-3",
+	"version": "r13.12.26-3"
+}

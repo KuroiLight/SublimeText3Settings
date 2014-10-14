@@ -1,0 +1,17 @@
+{
+	"installed_packages":
+	[
+		"AutoHotkey",
+		"Colorsublime",
+		"FASM x86",
+		"GoSublime",
+		"Nemerle",
+		"OCaml",
+		"Package Control",
+		"Python 3",
+		"Rust",
+		"Scheme",
+		"Theme - Flatland",
+		"Theme - Soda"
+	]
+}

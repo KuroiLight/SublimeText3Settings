@@ -1,0 +1,219 @@
+
+** 2014-10-09 22:00:21.312922 **:
+MarGo: Missing required environment variables: GOPATH
+See the `Quirks` section of USAGE.md for info
+--------------------------------
+margo: 2014/10/09 22:13:08 broker.go:105: gocode_complete#mg9.autoken.9b8fb17b-c62d-4e8c-b960-38e38ebab207 PANIC: runtime error: slice bounds out of range
+goroutine 44 [running]:
+main.func·001()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:104 +0xcd
+runtime.panic(0x880e20, 0xb4aeef)
+	c:/go/src/pkg/runtime/panic.c:248 +0x1d3
+gosubli.me/something-borrowed/gocode.path_and_alias(0xc08218a960, 0x285278, 0xc08218a960, 0xc08218a960, 0x1)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:191 +0xbf
+gosubli.me/something-borrowed/gocode.collect_package_imports(0xc0821e4540, 0x20, 0xc082001500, 0x1, 0x1, 0xc082007700, 0x0, 0x0, 0x0)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:55 +0x1fd
+gosubli.me/something-borrowed/gocode.(*auto_complete_file).process_data(0xc082054d20, 0xc0821ac230, 0x47, 0x50)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletefile.go:60 +0x208
+gosubli.me/something-borrowed/gocode.(*auto_complete_context).apropos(0xc0820074c0, 0xc0821ac230, 0x47, 0x50, 0xc0821e4540, 0x20, 0x16, 0x0, 0x0, 0x0, ...)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletecontext.go:241 +0xb6
+gosubli.me/something-borrowed/gocode.(*margoState).Complete(0xc08204a570, 0x0, 0x0, 0x0, 0xc0820012d8, 0x6, 0xc0820013a0, 0x1, 0x1, 0xc0821ac230, ...)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/gosublime_gocode_bridge.go:52 +0x128
+main.(*mGocode).completions(0xc08218f100, 0xc0821ac230, 0x47, 0x50, 0xc0821e4540, 0x20, 0x16, 0x0, 0x0, 0x0)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:95 +0x151
+main.(*mGocode).Call(0xc08218f100, 0x0, 0x0, 0x0, 0x0)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:76 +0x5e6
+main.(*Broker).call(0xc082010070, 0xc0821e41a0, 0x285200, 0xc08218f100)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:113 +0xc2
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:188 +0xc6
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 16 [syscall]:
+syscall.Syscall6(0x7ffe318a1938, 0x5, 0x3e8, 0xc082067000, 0x1000, 0xc082061644, 0x0, 0x0, 0x0, 0x0, ...)
+	c:/go/src/pkg/runtime/syscall_windows.goc:72 +0x7f
+syscall.ReadFile(0x3e8, 0xc082067000, 0x1000, 0x1000, 0xc082061644, 0x0, 0x0, 0x0)
+	c:/go/src/pkg/syscall/zsyscall_windows_amd64.go:267 +0xd4
+syscall.Read(0x3e8, 0xc082067000, 0x1000, 0x1000, 0x186, 0x0, 0x0)
+	c:/go/src/pkg/syscall/syscall_windows.go:267 +0x8d
+os.(*File).read(0xc082038000, 0xc082067000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	c:/go/src/pkg/os/file_windows.go:296 +0x143
+os.(*File).Read(0xc082038000, 0xc082067000, 0x1000, 0x1000, 0x4577a0, 0x0, 0x0)
+	c:/go/src/pkg/os/file.go:95 +0x9f
+bufio.(*Reader).fill(0xc082018000)
+	c:/go/src/pkg/bufio/bufio.go:97 +0x1ba
+bufio.(*Reader).ReadSlice(0xc082018000, 0xa, 0x0, 0x0, 0x0, 0x0, 0x0)
+	c:/go/src/pkg/bufio/bufio.go:298 +0x233
+bufio.(*Reader).ReadBytes(0xc082018000, 0xc08218000a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	c:/go/src/pkg/bufio/bufio.go:376 +0xea
+main.(*Broker).accept(0xc082010070, 0xc082180000, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:128 +0x4d
+main.(*Broker).Loop(0xc082010070, 0xc082000001)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:213 +0x283
+main.main()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:140 +0xa8b
+
+goroutine 19 [finalizer wait, 5 minutes]:
+runtime.park(0x433f90, 0xb4eea0, 0xb4cf89)
+	c:/go/src/pkg/runtime/proc.c:1369 +0xac
+runtime.parkunlock(0xb4eea0, 0xb4cf89)
+	c:/go/src/pkg/runtime/proc.c:1385 +0x42
+runfinq()
+	c:/go/src/pkg/runtime/mgc0.c:2644 +0xdd
+runtime.goexit()
+	c:/go/src/pkg/runtime/proc.c:1445
+
+goroutine 21 [chan receive, 3 minutes]:
+gosubli.me/something-borrowed/gocode.func·021()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:112 +0x71
+created by gosubli.me/something-borrowed/gocode.new_file_reader
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:116 +0xa5
+
+goroutine 22 [chan receive]:
+main.func·003()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:114 +0x71
+created by main.init·2
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:117 +0x29
+
+goroutine 23 [sleep]:
+time.Sleep(0x77359400)
+	c:/go/src/pkg/runtime/time.goc:39 +0x38
+main.func·037()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:31 +0x277
+created by main.startOomKiller
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:33 +0x6a
+
+goroutine 32 [sleep]:
+time.Sleep(0x6fc23ac00)
+	c:/go/src/pkg/runtime/time.goc:39 +0x38
+main.func·033()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:122 +0x57
+created by main.main
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:131 +0xa0e
+
+goroutine 33 [chan receive, 5 minutes]:
+main.func·034()
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:135 +0x71
+created by main.main
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:138 +0xa3e
+
+goroutine 35 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 36 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 37 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 38 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 39 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 40 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 41 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 42 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 43 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 45 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 46 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 47 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 48 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 49 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 50 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 51 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 52 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 53 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+goroutine 54 [chan receive]:
+main.(*Broker).worker(0xc082010070, 0xc0820684a0, 0xc082180000)
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x79
+created by main.(*Broker).Loop
+	C:/Users/Vincent/AppData/Roaming/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x253
+
+
+
+** 2014-10-09 22:13:08.718583 **:
+GsComplete: broker: gocode_complete#mg9.autoken.9b8fb17b-c62d-4e8c-b960-38e38ebab207 PANIC
+--------------------------------
