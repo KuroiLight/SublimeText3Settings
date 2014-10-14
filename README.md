@@ -1,9 +1,11 @@
 SublimeText3Settings
 ====================
 
-needs Ubuntu fonts
+- needs Ubuntu fonts
 
-in packages directory
---
+
+in the packages directory
+
+~~~
 git clone https://github.com/KuroiLight/SublimeText3Settings.git ./
---
+~~~
